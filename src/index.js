@@ -7,12 +7,16 @@ import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import productSlice from './redux/slice/productSlice';
 import basketSlice from './redux/slice/basketSlice';
+import userSlice from './redux/slice/userSlice';
+import loginUserSlice from './redux/slice/loginUserSlice';
 
 
 const store = configureStore({
   reducer:{
     products:productSlice,
-    basket:basketSlice
+    basket:basketSlice,
+    users:userSlice,
+    loginuser:loginUserSlice,
 
   }
 })

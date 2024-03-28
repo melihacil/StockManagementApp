@@ -12,6 +12,10 @@ import { addBasket } from "../redux/slice/basketSlice";
 function DialogButton({ productId }) {
   const products = useSelector((state) => state.products);
   const [visible, setVisible] = useState(false);
+  const [irNumarasi, setIrNumarasi] = useState(0);
+  const [miktar, setMiktar] = useState(0);
+
+
   const existingProduct = products.filter((f) => f.id === productId);
   const dispach = useDispatch();
   //const {name, stock} = existingProduct[0];
@@ -21,6 +25,10 @@ function DialogButton({ productId }) {
 
   const [selectedDropDown, setSelectedDropDown] = useState(null);
   const dropDownOptions = [{ name: "Var" }, { name: "Yok" }];
+
+  function addBasketItem() {
+    dispach(addBasket({product:existingProduct, irnumber:irNumarasi, miktar:miktar, garanti:selectedDropDown}))
+  }
 
   const headerElement = (
     <div className="inline-flex align-items-center justify-content-center gap-2">
@@ -53,7 +61,7 @@ function DialogButton({ productId }) {
         footer={footerContent}
         style={{ width: "50rem" }}
         onHide={() => setVisible(false)}
-        onClick={()=> dispach(addBasket("hellos"))}
+        onClick={()=> addBasketItem()}
       >
         <div>
           {existingProduct.map((items, idx) => (
@@ -79,8 +87,8 @@ function DialogButton({ productId }) {
                   className="w-full md:w-14rem"
                 />
 
-                <InputText keyfilter="int" placeholder="IR Numarası" />
-                <InputText keyfilter="int" placeholder="Miktar" />
+                <InputText onChange={e => setIrNumarasi(e.target.value)} keyfilter="int" placeholder="IR Numarası" />
+                <InputText onChange={e => setMiktar(e.target.value)} keyfilter="int" placeholder="Miktar" />
               </div>
             </div>
           ))}
