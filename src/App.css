@@ -1,0 +1,57 @@
+
+
+.body_main{
+  background: #dfe9f5;
+  justify-content: center;
+  display: flex;
+  padding: 90px 0 90px 0;
+  background-color: rgb(252,252,252);
+
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  height: 550px;
+  width: 25%;
+  box-shadow: 11px 12px 13px 12px rgb(207,207,207);
+background-color: #fff;
+border-radius: 10px;
+margin-top: 100px;
+}
+
+.input_container{
+  display: flex;
+  margin-top: 250px;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  
+  
+
+}
+
+.logo{
+  width: 50%;
+  
+  margin-bottom: 30px;
+
+}
+
+.input_username{
+  
+  width: 70%;
+  height: 30px;
+  border-radius: 3px;
+  border-color: gainsboro;
+
+}
+
+.input_password{
+  
+  width: 70%;
+  height: 30px;
+  border-radius: 3px;
+  border-color: gainsboro;
+  
+}
