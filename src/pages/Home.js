@@ -18,7 +18,7 @@ function Home() {
 
   return (
     <>
-    <ToolBar/>
+    
     
       <div
         style={{

@@ -21,7 +21,7 @@ function DialogButton({ productId }) {
   //const {name, stock} = existingProduct[0];
   //console.log(existingProduct);
   //const [uname, setuname] = useState(JSON.stringify(name))
-  console.log(existingProduct[0]);
+  //console.log(existingProduct[0]);
 
   const [selectedDropDown, setSelectedDropDown] = useState(null);
   const dropDownOptions = [{ name: "Var" }, { name: "Yok" }];

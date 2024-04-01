@@ -11,7 +11,7 @@ function ToolBar() {
     console.log("+++++++++");
     console.log(userName);
     const items = [
-        { label: 'Dashboard', icon: 'pi pi-home' },
+        { label: 'Dashboard',  url:'/home', icon: 'pi pi-home' },
         { label: 'Transactions', url:'/basket', icon: 'pi pi-chart-line' },
         { label: 'Products', icon: 'pi pi-list' },
         { label: 'Messages', icon: 'pi pi-inbox' }
