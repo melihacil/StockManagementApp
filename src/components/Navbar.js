@@ -6,10 +6,12 @@ import { Link } from "react-router-dom";
 import "./css/Navbar.css";
 import { Avatar } from "primereact/avatar";
 import { IconContext } from "react-icons";
+import { useDispatch, useSelector } from "react-redux";
 
 function Navbar() {
   const [sidebar, setSideBar] = useState(false);
   const showSideBar = () => setSideBar(!sidebar);
+  const loginUser = useSelector((state) => state.loginuser.username);
 
   return (
     <>
@@ -45,16 +47,29 @@ function Navbar() {
                 </li>
               );
             })}
-            <Avatar style={{
-              marginLeft:30,
-              marginTop:350
-            }} image="https://primefaces.org/cdn/primereact/images/avatar/amyelsner.png" className="mr-2" size="large" shape="circle" />
+            <div>
+              <Avatar
+                style={{
+                  marginLeft: 55,
+                  marginTop: 350,
+                }}
+                image="https://primefaces.org/cdn/primereact/images/avatar/amyelsner.png"
+                className="mr-2"
+                size="large"
+                shape="circle"
+              >
+                <h6 style={
+                  { marginLeft: 10 ,
+                  color:'#fff'}
+                  }>
+                  {loginUser}</h6>
+              </Avatar>
+            </div>
+
             <li className="nav-logout">
-      
-                    
               <Link to={"/"}>
                 <FaIcons.FaSignOutAlt />
-                <span>Log Out</span>
+                <span>Çıkış</span>
               </Link>
             </li>
           </ul>
@@ -68,37 +83,37 @@ export default Navbar;
 
 const SideBarData = [
   {
-    title: "Home",
+    title: "Anasayfa",
     path: "/home",
     icon: <AiIcons.AiFillHome />,
     cName: "nav-text",
   },
   {
-    title: "Reports",
+    title: "Raporlar",
     path: "/reports",
     icon: <IoIcons.IoIosPaper />,
     cName: "nav-text",
   },
   {
-    title: "Products",
+    title: "Taleplerim",
     path: "/basket",
     icon: <FaIcons.FaCartPlus />,
     cName: "nav-text",
   },
   {
-    title: "Team",
+    title: "Organizasyon",
     path: "/team",
     icon: <IoIcons.IoMdPeople />,
     cName: "nav-text",
   },
   {
-    title: "Messages",
+    title: "Mesajlar",
     path: "/messages",
     icon: <FaIcons.FaEnvelopeOpenText />,
     cName: "nav-text",
   },
   {
-    title: "Support",
+    title: "Destek",
     path: "/support",
     icon: <IoIcons.IoMdHelpCircle />,
     cName: "nav-text",

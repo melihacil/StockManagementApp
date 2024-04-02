@@ -5,28 +5,45 @@ import { Button } from "primereact/button";
 import { Rating } from "primereact/rating";
 import { Tag } from "primereact/tag";
 import Search from "../components/Search";
-import { Chart } from 'primereact/chart';
+import { Chart } from "primereact/chart";
 import ProductChart from "../components/ProductChart";
 import ProductTable from "../components/ProductTable";
 import ToolBar from "../components/ToolBar";
 import DialogButton from "../components/DialogButton";
 import Table from "../components/Table";
 
-
 function Home() {
- 
-
   return (
     <>
-    
-    
+    <div style={{
+      width:'70%',
+      height:'auto',
+      marginTop:30,
+      marginLeft:400,
+      boxShadow:'11px 12px 13px 12px rgb(207,207,207)',
+      borderRadius:10,
+      paddingTop:20,
+      paddingLeft:250,
+
+    }}>
+      <h1>
+        Ürünler
+      </h1>
+      <div
+        style={{
+          width: "30%",
+          
+        }}
+      >
+        <Search />
+      </div>
       <div
         style={{
           display: "flex",
           flexDirection: "row",
           alignItems: "center",
-          marginTop:100,
-          marginLeft:300,
+          marginTop: 30,
+          
         }}
       >
         {/*
@@ -36,11 +53,11 @@ function Home() {
           width:700,
           
         }}><ProductChart/></div> */}
-        <Table></Table>
-        
+
+        <Table />
       </div>
-      <DialogButton></DialogButton>
       
+      </div>
     </>
   );
 }

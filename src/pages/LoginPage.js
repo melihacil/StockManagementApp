@@ -56,10 +56,13 @@ function LoginPage() {
     <>
       <form onSubmit={handleSubmit}>
         <div className="body_main">
+          
           <div className="wrapper">
+            <div className="login_title"><h1>e-Depo</h1></div>
             <div className="input_container">
               {/*<input className="input_username" placeholder="username"></input>
             <input className="input_password" placeholder="password"></input>*/}
+            
               <InputText
                 style={{
                   margin: 20,

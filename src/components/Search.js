@@ -5,8 +5,8 @@ import { Button } from "primereact/button";
 function Search() {
   return (
     <div className="p-inputgroup flex-1">
-      <Button label="Search" />
-      <InputText placeholder="Keyword" />
+      <Button label="Ara" />
+      <InputText placeholder="Ürün Adı" />
     </div>
   );
 }

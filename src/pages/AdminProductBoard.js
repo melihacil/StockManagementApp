@@ -3,11 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import "../components/css/Table.css";
 import { Paginator } from "primereact/paginator";
 
-function Basket() {
+function AdminProductBoard() {
   const basketItems = useSelector((state) => state.basket.baskets);
-  const loginUser = useSelector((state) => state.loginuser.username);
   const [talepler, setTalepler] = useState([]);
-
   const [currentPage, setCurrentPage] = useState(1);
   const [first, setFirst] = useState(0);
   const [rows, setRows] = useState(7);
@@ -26,10 +24,7 @@ function Basket() {
     //recordPerPage = event.rows
   };
   console.log(basketItems);
-  console.log(loginUser);
-  const existingUserProduct = basketItems.filter((f) => f.user.username === loginUser).slice(firstIndex, lastIndex);
-  
-  console.log(existingUserProduct);
+
 
   return (
     <>
@@ -38,7 +33,7 @@ function Basket() {
           marginLeft: 400,
         }}
       >
-        Taleplerim
+        Talepler
       </h1>
 
       <div
@@ -56,21 +51,27 @@ function Basket() {
         <div className="table-container">
           <table className="table">
             <thead>
+              <th>Personel</th>
               <th>Code</th>
               <th>IR Numarası</th>
               <th>Garanti Durumu</th>
               <th>Adet</th>
               <th>Tarih</th>
               <th>Durum</th>
+              <th></th>
             </thead>
-            {existingUserProduct.map((items, index) => (
+            {records.map((items, index) => (
               <tr key={index}>
+                <td>{items.user.username}</td>
                 <td>--</td>
                 <td>{items.irnumber}</td>
                 <td>{items.garanti.name}</td>
                 <td>{items.miktar}</td>
                 <td>{items.date}</td>
                 <td>{items.durum}</td>
+                <td>
+                  <button>Onayla</button>
+                </td>
               </tr>
             ))}
           </table>
@@ -90,4 +91,4 @@ function Basket() {
   );
 }
 
-export default Basket;
+export default AdminProductBoard;
