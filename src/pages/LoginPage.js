@@ -4,10 +4,11 @@ import logo from "../images/logo_main.png";
 import { InputText } from "primereact/inputtext";
 import { Button } from "primereact/button";
 import "primereact/resources/themes/lara-light-cyan/theme.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {addLoginUser} from '../redux/slice/loginUserSlice';
+
 
 function LoginPage() {
   const [username, setUserName] = useState("");
@@ -18,6 +19,9 @@ function LoginPage() {
   const users = useSelector((state) => state.users);
 
   const dispach = useDispatch();
+
+  const location = useLocation()
+  console.log(location.pathname);
 
   function handleSubmit(e) {
     e.preventDefault();
